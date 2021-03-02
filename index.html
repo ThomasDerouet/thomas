@@ -9,29 +9,67 @@
 </head>
 
 <body>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nemo, eos deleniti optio eum maiores reiciendis itaque
-    tenetur nulla dolore <div style="border:1px solid black;"> doloremque voluptates error <span style="color:red"> doloris </span> voluptate </div> quibusdam nobis. Earum, vel blanditiis!
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, ab magni, harum ipsum quis quo consequatur
-    necessitatibus perspiciatis nostrum, laudantium enim itaque! Soluta tempore deleniti aut mollitia molestiae
-    exercitationem accusantium!
 
-<table border="1">
-    <tr>
-        <td> data</td>
-        <th colspan="2"> header</th>
-    </tr>
-    <tr>
-        <td rowspan="2"> data2</td>
-        <td> data3</td>
-        <td> data4 </td>
-    </tr>
-    <td> data5</td>
-    <td> data6 </td>
+<div id="main-content">
+    <div id="formulaire-de-saisie">
+        <form action="" method="GET" name="mon-form">
+            <table>
+                <tr>
+                    <td><label for="form-titre">Titre de la note</label></td>
+                    <td><input type="text" name="form-titre" id="form-titre" /></td>
+                </tr>
+                <tr>
+                    <td><label for="form-auteur">auteur</label></td>
+                    <td>
+                        <select name="form-auteur" id="form-auteur">
+                            <option value="0">Louise</option>
+                            <option value="1">Alex</option>
+                            <option value="2">thomas</option>
+                            <option value="3">cedric</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="form-hour">Date et heure</label></td>
+                    <td>le <input type="date" name="form-date" id="form-date" /><br/>à <input type="time"
+                            name="form-hour" id="form-hour" /></td>
+                </tr>
+                <tr>
+                    <td><label for="form-mail">email</label></td>
+                    <td><input type="email" name="form-email" id="form-email" /></td>
+                </tr>
+                <tr>
+                    <td><label for="form-adresse">adresse</label></td>
+                    <td><input type="text" name="form-adresse" id="form-adresse" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label for="form-description">Description</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <textarea name="description" id="form-description" cols="30" rows="10"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="reset" value="clear"> </td>
+                    <td><button type="submit"> Save <span style="color:red">post-it </span> </button></td>
 
-</tr>
+                </tr>
+            </table>
 
-</table>
-<img src="large_rec-201701251556.jpg" alt= "logo orsys">
-<a href="http:clanphs.free.fr/">cliquer ici</a>
+
+
+        </form>
+    </div>
+    <hr />
+    <div id="post-it-liste">
+        <div class="post-it">un post-it</div>
+        <div class="post-it">un deuxieme post-it</div>
+        <div class="post-it">un troisieme post-it</div>
+        <div class="post-it">un quatrieme post-it</div>
+        <div class="post-it">un cinquieme post-it</div>
+    </div>
+</div>
 </body>
+
 </html>
