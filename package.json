@@ -1,0 +1,23 @@
+{
+  "name": "thomas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomasDerouet/thomas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThomasDerouet/thomas/issues"
+  },
+  "homepage": "https://github.com/ThomasDerouet/thomas#readme",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
