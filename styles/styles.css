@@ -1,0 +1,116 @@
+body {
+    background-image: url(../img/waldo.jpg);
+    background-size: 100% 180%;
+    height: 98vh;
+}
+
+#formulaire-de-saisie {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    /* border en specifique
+    border-style: solid;
+    border-width: 1px;
+    border-color: black; */
+    border: 1px solid black;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#formulaire-de-saisie table {
+    width: 100%;
+}
+
+#formulaire-de-saisie td {
+    width: 50%;
+}
+
+#formulaire-de-saisie textarea {
+    width: 98%;
+    resize: none;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    margin: 5px;
+    box-shadow: 7px 7px 10px grey;
+}
+
+/*déclinaisons du bouton*/
+
+.btn-success {
+    background-color: green;
+    color: white;
+}
+
+.btn-error {
+    background-color: tomato;
+    color: white;
+}
+
+#post-it-liste {
+    text-align: center;
+    /*hauteur du body - 450 px la taille du content de la partie supérieure */
+    height: calc(100vh - 500px);
+    overflow-y: scroll;
+}
+
+.post-it {
+    border: 1px solid black;
+    width: 20%;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    background-color: #FFFFA5;
+    display: inline-block;
+    box-shadow: 15px 15px 20px grey;
+    padding: 7px;
+}
+
+/*mettre en surbrillance post-it quand souris dessus*/
+
+.post-it:hover {
+    box-shadow: 15px 15px 20px grey;
+    background-color: #FFFF50;
+}
+
+.close-image {
+    float: right;
+}
+
+.close-image>img {
+    width: 32px;
+    height: 32px;
+}
+
+.post-it-description {
+    margin-top: 20 px;
+    overflow-y: auto;
+    height: 75px;
+}
+
+/*Pour impression*/
+@media print {
+    #jsloaded, #formulaire-de-saisie, hr {
+        display: none;
+    }
+    .post-it{
+        height: auto;
+        width:6cm;
+    }
+    #post-it-liste{
+        height :auto;
+        overflow-y: unset;
+    }
+    .post-it-description{
+        margin-top: 1cm;
+        height:auto;
+    }
+}
