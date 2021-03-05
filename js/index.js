@@ -79,19 +79,21 @@ function makePostIt(postitDOM, postitValues) {
     postitNode.querySelector('.post-it-description').innerHTML = postitValues.description;
     postitNode.querySelector('.post-it-auteur').innerHTML = postitValues.auteurId;
     postitNode.querySelector('.close-image img').addEventListener('dblclick', function (evt) {
-        if (confirm('delete postit???')) {
-            alert('you have to click on YES answer');
+        evt.stopPropagation();
+        //action ok detruit le postit, cancel vide ans instruction juste pour la creation du bouton
+        showModal('want you to delete postit?',function(){
+            //alert('you have to click on YES answer');
             console.log('le click est sur le postit :', postitValues);
             console.log('le click est sur le DOM node :', evt.currentTarget);
             postItCrud.del('/postits/' + postitValues.id, function (response) {
                 evt.path[2].remove();
                 console.log('deleted postit on REST server and in DOM:', postitValues);
             });
-        }
+        }, function(){})
         // else alert ('it wont be deleted');
     });
     //Supression puis mise en affichage dans le form après suppression pour éditer une note
-    postitNode.querySelector('.post-it').addEventListener('dbclick', function (evt) {
+    postitNode.querySelector('.post-it').addEventListener('dblclick', function (evt) {
         //Suppression du postit
         postItCrud.del('.postits/' + postitValues.id, function (response) {
             evt.target.remove();
@@ -104,7 +106,14 @@ function makePostIt(postitDOM, postitValues) {
 }
 function putPostItInForm(values){
     varform=document.forms['mon-form'];
-    form['postit-titre'].value=values.titre;
+    //attribution de la valeur pour chacun des champs a partir de la valeur dans l'arg d'entree
+    form['form-titre'].value=values.titre;
+    form['form-auteur'].value=values.auteur;
+    form['form-date'].value=values.date;
+    form['form-hour'].value=values.hour;
+    form['form-adresse'].value=values.adresse;
+    form['form-email'].value=values.mail;
+    form['form-description'].value=values.description;
 }
 
 function onformsubmit(evt) {
